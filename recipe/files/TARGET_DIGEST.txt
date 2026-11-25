@@ -1,0 +1,10 @@
+image_manifest_digest=sha256:6b74cfa71db2c51e1a21e3342402d3993573ea02a0c85063897eda87958dca26
+config_digest=sha256:a08577913f860cca67c84dd79abf66673b6c3a10ef17ce5ecbc89b187ce3c337
+tag=readystack/pause:3.10.2-CE-scratch-r1
+probe_port=80
+probe_path=/
+probe_timeout=180
+probe_exec=test "$(cat /proc/1/comm)" = pause
+verify_boot=oneshot
+verify_oneshot_arg=-v
+verify_oneshot_expect=pause.c v3.10.2-

@@ -1,0 +1,36 @@
+{
+  "schema": "kitforge.build_recipe.v1",
+  "slug": "pause",
+  "image": "readystack/pause:3.10.2-CE-scratch-r1",
+  "build_method": "source-rebuild-c",
+  "source": {
+    "repo": "https://github.com/kubernetes/kubernetes",
+    "ref": "v1.36.6",
+    "commit": "1b2171b110bb2a2542e1322035c6583ec86eb976",
+    "source_date_epoch": 1793102572,
+    "source_date_epoch_provenance": "committer date of 1b2171b110bb2a2542e1322035c6583ec86eb976, the commit tag v1.36.6 points to (2026-10-27T12:02:52Z); the pin manifest registry/stacks/kubevirt-stack.json fixes the commit (git log -1 --format=%ct on a clone of the tag, 2026-10-28).",
+    "build_system": "gcc (build/pause/Makefile's CFLAGS)",
+    "builder_image": "golang:1.26.10-bookworm",
+    "compiler": "gcc 12.2.0 (Debian 12.2.0-14) from the pinned golang:1.26.10-bookworm image",
+    "components": [
+      {
+        "repo": "https://github.com/kubernetes/kubernetes",
+        "ref": "v1.36.6",
+        "commit": "1b2171b110bb2a2542e1322035c6583ec86eb976",
+        "license": "Apache-2.0"
+      }
+    ],
+    "_version_note": "pause 3.10.2 is build/pause/Makefile's TAG at kubernetes v1.36.6 and kubeadm v1.36.6's constants.PauseVersion; the pin manifest fixes it (compat.pause)."
+  },
+  "binaries_from_source": [
+    {
+      "name": "pause",
+      "source_file": "build/pause/linux/pause.c",
+      "cflags": "-Os -Wall -Werror -static -DVERSION=v3.10.2-",
+      "out_path": "/pause",
+      "verify_subcmd": "-v",
+      "verify_contains": "pause.c v3.10.2-"
+    }
+  ],
+  "runtime_packages": []
+}

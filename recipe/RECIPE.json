@@ -1,0 +1,269 @@
+{
+ "schema": "readystack.recipe.v1",
+ "slug": "pause",
+ "tag": "3.10.2-CE-scratch-r1",
+ "tarball": "ReadyStack-pause-3.10.2-CE-scratch-r1.tar.gz",
+ "tarball_sha256": "021b80ad6deb979b0586e7b3577582f174f400206f5d2a83f82a1857a10706e5",
+ "kit_root": "3.10.2-CE-scratch-r1",
+ "generated_at": "2026-11-11T22:32:43Z",
+ "generator": "KitForge release/recipe_publish.py",
+ "dockerfile": "Dockerfile.offline.pinned",
+ "build_script": "BUILD_OFFLINE.sh",
+ "preview_lines": 24,
+ "pins": {
+  "upstream": {
+   "repo": "https://github.com/kubernetes/kubernetes",
+   "ref": "v1.36.6",
+   "commit": "1b2171b110bb2a2542e1322035c6583ec86eb976",
+   "url": "https://github.com/kubernetes/kubernetes/tree/1b2171b110bb2a2542e1322035c6583ec86eb976",
+   "from": "docs/provenance/BUILD_RECIPE.json"
+  },
+  "fetches": [
+   {
+    "kind": "git",
+    "url": "https://github.com/kubernetes/kubernetes.git",
+    "ref": "v1.36.6"
+   }
+  ],
+  "bases": [
+   {
+    "ref": "golang:1.26.10-bookworm@sha256:632dff7351799a5a9954a48dc06670ade72ee44e8c351cdc0e5a57af2fea21af",
+    "image": "golang:1.26.10-bookworm",
+    "digest": "sha256:632dff7351799a5a9954a48dc06670ade72ee44e8c351cdc0e5a57af2fea21af"
+   }
+  ],
+  "toolchain": {
+   "buildkit": "moby/buildkit:v0.31.2",
+   "buildkit_image_digest": "sha256:e0e67ea9c4bb07bdef683e29f70f3b623d1eb9c82274a9ec04e6bb0511449fb0",
+   "builder_images": [
+    "golang:1.26.10-bookworm@sha256:632dff7351799a5a9954a48dc06670ade72ee44e8c351cdc0e5a57af2fea21af"
+   ]
+  },
+  "build_method": "source-rebuild-c",
+  "source_date_epoch": 1793102572,
+  "source_date_epoch_utc": "2026-10-27T12:02:52Z",
+  "target": {
+   "image_manifest_digest": "sha256:6b74cfa71db2c51e1a21e3342402d3993573ea02a0c85063897eda87958dca26",
+   "config_digest": "sha256:a08577913f860cca67c84dd79abf66673b6c3a10ef17ce5ecbc89b187ce3c337",
+   "image": "readystack/pause:3.10.2-CE-scratch-r1"
+  },
+  "checksummed_files": 29306
+ },
+ "files": [
+  {
+   "path": "BASES.tsv",
+   "size": 143,
+   "sha256": "2723d349204e265669d4d19e2e96fc49d3c481b7b964999bae66afcba2519644",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "BUILD_OFFLINE.sh",
+   "size": 8856,
+   "sha256": "6ab4f08a6ec775b32d854f03413b30ecfe555ddba78cf0de956235f5a2a39542",
+   "lines": 162,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "CHECKSUMS.sha256",
+   "size": 4875339,
+   "sha256": "55a1d4f6c66cdafb68dab2dc86e816a126eccf01f8ce65dea20d186ec77d9200",
+   "lines": 29306,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "DOCKERFILE_NAME.txt",
+   "size": 26,
+   "sha256": "9aadd1ede68e016a6f163c97befc5ff2fcdc8ebd4f84b108dba63cb195fa8c84",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "Dockerfile",
+   "size": 4007,
+   "sha256": "f553e1e38a155a3d8e7764a475a9f1f9bf18c98b35bfabfc518cfa374cd28d58",
+   "lines": 52,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline",
+   "size": 4007,
+   "sha256": "f553e1e38a155a3d8e7764a475a9f1f9bf18c98b35bfabfc518cfa374cd28d58",
+   "lines": 52,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline.pinned",
+   "size": 4007,
+   "sha256": "f553e1e38a155a3d8e7764a475a9f1f9bf18c98b35bfabfc518cfa374cd28d58",
+   "lines": 52,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "Dockerfile.vendor",
+   "size": 1307,
+   "sha256": "6d3e4553f6fe28e183205c2334d61210d879987380bc7e2330b125263bd1f8b3",
+   "lines": 18,
+   "public": "account"
+  },
+  {
+   "path": "FILE_MODES.tsv",
+   "size": 3488366,
+   "sha256": "b5aaf7baa6693b0b7e4db6be82a1a364347f5fc7833709334b12538141ce6db8",
+   "lines": 35210,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "MANIFEST.txt",
+   "size": 2882548,
+   "sha256": "41b77c70c9d5033299d584d4a8dff5950766f13c6db248b173b654ce064a4a83",
+   "lines": 29307,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "README.md",
+   "size": 3244,
+   "sha256": "aee5481859d633e039ecbb36ebe56db41600676d784be7246063517f3227ed51",
+   "lines": 39,
+   "public": "account"
+  },
+  {
+   "path": "SOURCE_DATE_EPOCH.txt",
+   "size": 11,
+   "sha256": "1baf07802daf74bb53895a5dc126efadea088eaec3460ac65cf3d9b9ca460a3c",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "TARGET_DIGEST.txt",
+   "size": 394,
+   "sha256": "6111e9901ebe37ce2fbfb9e6859479482aff4968aed095d8144b96d909714374",
+   "lines": 10,
+   "public": "full"
+  },
+  {
+   "path": "VERIFY_OFFLINE.sh",
+   "size": 10153,
+   "sha256": "3e8184ea230cfd8f41f977e26be6bf7bd03112c396c517837ce0c7de4f7399dd",
+   "lines": 165,
+   "public": "account"
+  },
+  {
+   "path": "docs/PROVENANCE.md",
+   "size": 2509,
+   "sha256": "87aaab1ab90466b92c316cb36e3eebc650b52e37f5f9d78ad8daf8b223394d07",
+   "lines": 36,
+   "public": "account"
+  },
+  {
+   "path": "docs/REBUILD.md",
+   "size": 6258,
+   "sha256": "e448f34d587669365d8c0488feef7c54ae91e38b848856a69c4b299ab19a7fb9",
+   "lines": 62,
+   "public": "account"
+  },
+  {
+   "path": "docs/VERIFY.md",
+   "size": 1932,
+   "sha256": "193ceb9f265fc3fd427b52da1e3b010dcaece16da6ff30c230b31623d2f7ef14",
+   "lines": 34,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/BASE_IMAGE_DIGESTS.lock",
+   "size": 71,
+   "sha256": "095ce71fac93812e9d0e74a1a5f246240c2df4170a9439c6af00c1e7d13fdfe0",
+   "lines": 2,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/BUILD_RECIPE.json",
+   "size": 1540,
+   "sha256": "52a398bac22e8369dce1ed6a086f2ca69439ef0d2e1d35063558693982bc02a0",
+   "lines": 36,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/CUSTODY_INPUTS.json",
+   "size": 652,
+   "sha256": "6e7ec9b7429b40384fb55c94d664fa5167347b0998368655ed25b86addb46a6e",
+   "lines": 17,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_FILE_MANIFEST.json",
+   "size": 262249,
+   "sha256": "3162e9029ebd18eb492d3061d3a0c223f3c8d937ef723a944c6cba366c31ac26",
+   "lines": 5007,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "docs/provenance/SOURCE_TREE_HASH.json",
+   "size": 311,
+   "sha256": "3cde6bbc716dfaa4b1a8442ab14ccf06bebe3027f46df8a3781021f9b14973d2",
+   "lines": 9,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/SYSTEM_PINNING.lock",
+   "size": 1,
+   "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+   "lines": 1,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/TOOLCHAIN.lock",
+   "size": 1888,
+   "sha256": "68276873eee5d77ceb9cf6781433c93841031a3f008d09dc59b5d9012cbbe098",
+   "lines": 57,
+   "public": "account"
+  },
+  {
+   "path": "rebuild.json",
+   "size": 1200,
+   "sha256": "d48edff6540af70d182c54b2bae1242ba46479fc7189ba5d763040e41ff74162",
+   "lines": 36,
+   "public": "account"
+  },
+  {
+   "path": "static-sbom.py",
+   "size": 6054,
+   "sha256": "37be8271209a99f67c7740085195b62c1e4f5efdc9644362089885b9c78a6705",
+   "lines": 102,
+   "public": "account"
+  },
+  {
+   "path": "toolchain/BUILDKIT_TAG.txt",
+   "size": 22,
+   "sha256": "fcd530eeb02b063d2f047adad6eef896422a8e8d558513e5f09b2a262be32573",
+   "lines": 1,
+   "public": "full"
+  }
+ ],
+ "skipped": [],
+ "kit_adds": {
+  "bases": {
+   "files": 11,
+   "bytes": 296811899
+  },
+  "docs": {
+   "files": 29257,
+   "bytes": 248052271
+  },
+  "toolchain": {
+   "files": 1,
+   "bytes": 111529472
+  },
+  "vendored": {
+   "files": 12,
+   "bytes": 29311
+  }
+ },
+ "redacted_files": 0
+}

@@ -1,0 +1,18 @@
+# =====================================================================
+# pause 3.10.2 VENDOR STAGE (online). Exports the pause sources from kubernetes v1.36.6 (pin manifest
+# registry/stacks/kubevirt-stack.json: commit 1b2171b110bb2a2542e1322035c6583ec86eb976), so Dockerfile.offline.pinned
+# builds with --network=none.
+#   - pause-src : build/pause/ (pause.c, Makefile, Dockerfile, CHANGELOG.md) and LICENSE of kubernetes v1.36.6
+# The image is FROM scratch, as upstream's (build/pause/Makefile BASE.linux := scratch): no operating system, so no apt
+# closure is vendored.
+# Export (assemble_kit): docker build -f Dockerfile.vendor --target export, then docker cp the image's / into ./vendored
+# =====================================================================
+FROM golang:1.26.10-bookworm@sha256:632dff7351799a5a9954a48dc06670ade72ee44e8c351cdc0e5a57af2fea21af AS pausevendor
+WORKDIR /k8s
+RUN git clone --depth 1 --branch v1.36.6 -q https://github.com/kubernetes/kubernetes.git . && \
+    test "$(git rev-parse HEAD)" = 1b2171b110bb2a2542e1322035c6583ec86eb976 && \
+    grep -qx 'TAG ?= 3.10.2' build/pause/Makefile && \
+    mkdir -p /pause-src/build && cp -a build/pause /pause-src/build/pause && cp LICENSE /pause-src/LICENSE
+
+FROM scratch AS export
+COPY --from=pausevendor /pause-src /pause-src
